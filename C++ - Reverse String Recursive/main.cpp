@@ -11,7 +11,7 @@ void rec_rev_str();
 
 int main()
 {
-    cout<<" Enter The String To Be Reversed .. Press Enter To Stop : ";
+    cout << " Enter The String To Be Reversed .. Press Enter To Stop : ";
     rec_rev_str();
     return 0;
 }
@@ -19,8 +19,8 @@ int main()
 void rec_rev_str()
 {
     char ch;
-    ch=cin.get();
-    if(ch!='\n')
+    ch = cin.get();
+    if (ch != '\n')
         rec_rev_str();
-    cout<<ch;
+    cout << ch;
 }

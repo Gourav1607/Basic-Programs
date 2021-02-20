@@ -1,8 +1,9 @@
 #include <iostream.h>
-#include<conio.h>
-#include<fstream.h>
-#include<stdio.h>
-void main() {
+#include <conio.h>
+#include <fstream.h>
+#include <stdio.h>
+void main()
+{
 	clrscr();
 	char a[150];
 	char ch;
@@ -10,15 +11,18 @@ void main() {
 	cout << "Enter text" << endl;
 	gets(a);
 	ofstream file("EXAMPLE.txt");
-	for (int i = 0; a[i] != '\0'; i++) {
+	for (int i = 0; a[i] != '\0'; i++)
+	{
 		file.put(a[i]);
 	}
 	file.close();
 	ifstream fin("EXAMPLE.txt");
 	ofstream fout("NEW.txt");
-	while (fin) {
+	while (fin)
+	{
 		fin.get(ch);
-		while (ch == ' ') {
+		while (ch == ' ')
+		{
 			if (count == 0)
 				fout.put(ch);
 			fin.get(ch);
@@ -31,8 +35,10 @@ void main() {
 	fout.close();
 	ifstream fil("NEW.txt");
 
-	cout << endl << "Final sentence is : ";
-	while (fil) {
+	cout << endl
+		 << "Final sentence is : ";
+	while (fil)
+	{
 		fil.get(ch);
 
 		cout << ch;

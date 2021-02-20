@@ -5,7 +5,7 @@
  */
 
 #ifndef MYSTACK_H
-#define	MYSTACK_H
+#define MYSTACK_H
 #define SIZE 30
 using namespace std;
 
@@ -15,29 +15,30 @@ class mystack
 private:
     int top;
     T arr[SIZE];
+
 public:
     mystack()
     {
-        top=-1;
+        top = -1;
     }
     bool isempty()
     {
-        return top==-1;
+        return top == -1;
     }
     bool isfull()
     {
-        return top==(SIZE-1);
+        return top == (SIZE - 1);
     }
     T topel()
     {
-        if(!isempty())
+        if (!isempty())
             return arr[top];
         else
             throw 1;
     }
     void clear()
     {
-        top=0;
+        top = 0;
     }
     T pop();
     void push(T);
@@ -47,7 +48,7 @@ public:
 template <class T>
 T mystack<T>::pop()
 {
-    if(!isempty())
+    if (!isempty())
         return arr[top--];
     else
         throw 1;
@@ -56,8 +57,8 @@ T mystack<T>::pop()
 template <class T>
 void mystack<T>::push(T x)
 {
-    if(!isfull())
-        arr[++top]=x;
+    if (!isfull())
+        arr[++top] = x;
     else
         throw 1;
 }
@@ -65,12 +66,12 @@ void mystack<T>::push(T x)
 template <class T>
 void mystack<T>::display()
 {
-    cout<<"\n The Stack Is : \n ";
-    if(isempty())
-        cout<<" Empty";
+    cout << "\n The Stack Is : \n ";
+    if (isempty())
+        cout << " Empty";
     else
-        while(!isempty())
-            cout<<pop();
+        while (!isempty())
+            cout << pop();
 }
 
-#endif	/* MYSTACK_H */
+#endif /* MYSTACK_H */

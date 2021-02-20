@@ -12,6 +12,5 @@ public class Prog4 {
 		a = s;
 		a.getCord(4, 5);
 		a.showCord();
-
 	}
 }

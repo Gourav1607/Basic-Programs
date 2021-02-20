@@ -17,5 +17,4 @@ class Rect extends Shape {
 	void showCord() {
 		System.out.print("inside REct");
 	}
-
 }

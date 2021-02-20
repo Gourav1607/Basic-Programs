@@ -6,9 +6,11 @@
 #include "stdio.h"
 using namespace std;
 
-class mystring {
+class mystring
+{
     char str[20];
-    public:
+
+public:
     void getdata();
     mystring strcatt(const mystring &);
     int length();
@@ -17,36 +19,42 @@ class mystring {
     void disp();
 };
 
-mystring mystring :: strcatt(const mystring &s1) {
+mystring mystring ::strcatt(const mystring &s1)
+{
     mystring s;
     strcpy(s.str, str);
     strcat(s.str, s1.str);
     return s;
 }
 
-void mystring :: getdata() {
-    cout<<"Enter the String: ";
+void mystring ::getdata()
+{
+    cout << "Enter the String: ";
     fflush(stdin);
     gets(str);
 }
 
-void mystring :: disp() {
-    cout<<str;
+void mystring ::disp()
+{
+    cout << str;
 }
 
-int mystring :: length() {
-    int n=0;
-    for(int i=0; str[i]!='\0'; i++)
+int mystring ::length()
+{
+    int n = 0;
+    for (int i = 0; str[i] != '\0'; i++)
         n++;
     return n;
 }
 
-void mystring :: strapp(const mystring &s) {
+void mystring ::strapp(const mystring &s)
+{
     strcat(str, s.str);
 }
 
-int mystring :: compare(const mystring &s) {
-    if(strcmp(str, s.str) == 0)
+int mystring ::compare(const mystring &s)
+{
+    if (strcmp(str, s.str) == 0)
         return 1;
     else
         return 0;

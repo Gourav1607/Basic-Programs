@@ -3,78 +3,89 @@
 
 using namespace std;
 
-class dates {
-    protected:
-        int day;
-        int mon;
-        int year;
-        void check();
-    public:
-        dates();
-        void getdata();
-        void display();
-        int operator>(const dates&);
-        int operator<(const dates&);
-        int operator==(const dates&);
+class dates
+{
+protected:
+    int day;
+    int mon;
+    int year;
+    void check();
+
+public:
+    dates();
+    void getdata();
+    void display();
+    int operator>(const dates &);
+    int operator<(const dates &);
+    int operator==(const dates &);
 };
 
-dates::dates() {
+dates::dates()
+{
     day = 1;
     mon = 1;
     year = 1950;
 }
 
-int dates::operator<(const dates &d) {
-    if(year < d.year)
+int dates::operator<(const dates &d)
+{
+    if (year < d.year)
         return 1;
     else
         return 0;
 
-    if(year == d.year) {
-        if(mon < d.mon)
+    if (year == d.year)
+    {
+        if (mon < d.mon)
             return 1;
         else
             return 0;
 
-        if(mon == d.mon) {
-            if(day < d.day)
+        if (mon == d.mon)
+        {
+            if (day < d.day)
                 return 1;
             else
                 return 0;
         }
-     }
+    }
 }
 
-int dates::operator>(const dates &d) {
-    if(year > d.year)
+int dates::operator>(const dates &d)
+{
+    if (year > d.year)
         return 1;
     else
         return 0;
 
-    if(year == d.year) {
-        if(mon > d.mon)
+    if (year == d.year)
+    {
+        if (mon > d.mon)
             return 1;
         else
             return 0;
 
-        if(mon == d.mon) {
-            if(day > d.day)
+        if (mon == d.mon)
+        {
+            if (day > d.day)
                 return 1;
             else
                 return 0;
         }
-     }
+    }
 }
 
-int dates::operator==(const dates &d) {
-    if(year == d.year && mon == d.mon && day == d.day)
+int dates::operator==(const dates &d)
+{
+    if (year == d.year && mon == d.mon && day == d.day)
         return 1;
     else
         return 0;
 }
 
-void dates::check() {
-    if(day <= 0 || mon <= 0 || year <= 0 || mon > 12)
+void dates::check()
+{
+    if (day <= 0 || mon <= 0 || year <= 0 || mon > 12)
         getdata();
     else if ((year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) && mon == 2 && day > 29)
         getdata();
@@ -92,16 +103,18 @@ void dates::check() {
         getdata();
 }
 
-void dates::getdata() {
-     cout<<"\n Enter Date (dd mm yyyy) ";
-     cin>>day;
-     cin>>mon;
-     cin>>year;
-     check();
+void dates::getdata()
+{
+    cout << "\n Enter Date (dd mm yyyy) ";
+    cin >> day;
+    cin >> mon;
+    cin >> year;
+    check();
 }
 
-void dates::display() {
-     cout<<day<<" "<<mon<<" "<<year;
+void dates::display()
+{
+    cout << day << " " << mon << " " << year;
 }
 
 #endif

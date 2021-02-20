@@ -3,7 +3,8 @@
 #include "cstdlib"
 using namespace std;
 
-int main() {
+int main()
+{
 	int m, n;
 	system("clear");
 	cout << "\n Enter Matrix Size : ";
@@ -14,12 +15,14 @@ int main() {
 
 	int mat[m][n];
 	for (int i = 0; i < m; i++)
-		for (int j = 0; j < n; j++) {
+		for (int j = 0; j < n; j++)
+		{
 			cout << " Enter Element MAT[" << i << "][" << j << "] : ";
 			cin >> mat[i][j];
 		}
 
-	for (int i = 0; i < m; i++) {
+	for (int i = 0; i < m; i++)
+	{
 		for (int j = 0; j < n; j++)
 			cout << setw(4) << mat[i][j];
 		cout << endl;
@@ -34,7 +37,8 @@ int main() {
 			swap(mat[a][i], mat[b][i]);
 
 	cout << " New Matrix Is : " << endl;
-	for (int i = 0; i < m; i++) {
+	for (int i = 0; i < m; i++)
+	{
 		for (int j = 0; j < n; j++)
 			cout << setw(4) << mat[i][j];
 		cout << endl;

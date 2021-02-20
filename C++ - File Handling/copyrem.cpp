@@ -1,9 +1,11 @@
-#include"copyrem.h"
+#include "copyrem.h"
 
-int main() {
+int main()
+{
 	copyrem c;
 	char ch = 'y';
-	while (ch != 'n') {
+	while (ch != 'n')
+	{
 		system("cls");
 
 		cout << "\n 01. Copy File Data Without White Spaces ";
@@ -11,7 +13,8 @@ int main() {
 		cout << "\n 00. Exit";
 		cout << "\n Enter Choice .. ";
 		cin >> ch;
-		switch (ch) {
+		switch (ch)
+		{
 		case '1':
 			c.getfile();
 			c.copyremove();

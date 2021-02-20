@@ -2,7 +2,8 @@
 #include "stdlib.h"
 using namespace std;
 
-int main() {
+int main()
+{
 	system("clear");
 	int i, j, k, m, n, p, q, sum = 0;
 	cout << "number of rows and columns in matrix a :\n";
@@ -10,7 +11,8 @@ int main() {
 	cout << "number of rows and columns in matrix b :\n";
 	cin >> p >> q;
 
-	if (n != p) {
+	if (n != p)
+	{
 		cout << "Matrices cannot be multiplied!!\n";
 		exit(0);
 	}
@@ -21,23 +23,29 @@ int main() {
 
 	cout << " Enter matrix a : \n";
 	for (int i = 0; i < m; i++)
-		for (int j = 0; j < n; j++) {
+		for (int j = 0; j < n; j++)
+		{
 			cout << "Enter " << i + 1 << " row " << j + 1 << " element\n";
 			cin >> a[i][j];
 		}
 
-	cout << endl << " Enter matrix b :\n";
+	cout << endl
+		 << " Enter matrix b :\n";
 
 	for (int i = 0; i < p; i++)
-		for (int j = 0; j < q; j++) {
+		for (int j = 0; j < q; j++)
+		{
 			cout << "Enter " << i + 1 << " row " << j + 1 << " element\n";
 			cin >> b[i][j];
 		}
 
 	//matrix multiplication
-	for (i = 0; i < m; i++) {
-		for (j = 0; j < q; j++) {
-			for (k = 0; k < p; k++) {
+	for (i = 0; i < m; i++)
+	{
+		for (j = 0; j < q; j++)
+		{
+			for (k = 0; k < p; k++)
+			{
 				sum += a[i][k] * b[k][j];
 			}
 			c[i][j] = sum;
@@ -46,8 +54,10 @@ int main() {
 	}
 
 	cout << " Product Matrix :\n";
-	for (int i = 0; i < m; i++) {
-		for (int j = 0; j < n; j++) {
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
 			cout << c[i][j] << ", ";
 		}
 		cout << endl;

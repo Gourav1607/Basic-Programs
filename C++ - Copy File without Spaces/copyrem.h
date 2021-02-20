@@ -6,35 +6,43 @@
 #define SIZE 20
 using namespace std;
 
-class copyrem {
+class copyrem
+{
     char name[SIZE];
-    public:
-        void copyremove();
-        void getfile();
-        void display();
+
+public:
+    void copyremove();
+    void getfile();
+    void display();
 };
 
-void copyrem :: getfile() {
-    cout<<"\n Enter Name Of File : ";
+void copyrem ::getfile()
+{
+    cout << "\n Enter Name Of File : ";
     fflush(stdin);
     gets(name);
 }
 
-void copyrem :: copyremove() {
+void copyrem ::copyremove()
+{
     char ch;
-    int flag=0;
+    int flag = 0;
     ifstream ifile(name);
     ofstream ofile("temp.txt");
 
     ifile.get(ch);
-    while(!ifile.eof()) {
-        if(ch == '\n') {
-            if(flag == 0)
+    while (!ifile.eof())
+    {
+        if (ch == '\n')
+        {
+            if (flag == 0)
                 ofile.put(ch);
-            flag=1;
-        } else if(ch != ' ') {
+            flag = 1;
+        }
+        else if (ch != ' ')
+        {
             ofile.put(ch);
-            flag=0;
+            flag = 0;
         }
         ifile.get(ch);
     }
@@ -45,11 +53,13 @@ void copyrem :: copyremove() {
     rename("temp.txt", name);
 }
 
-void copyrem :: display() {
+void copyrem ::display()
+{
     char ch;
     ifstream ifile(name);
     ifile.get(ch);
-    while(!ifile.eof()) {
+    while (!ifile.eof())
+    {
         cout.put(ch);
         ifile.get(ch);
     }
